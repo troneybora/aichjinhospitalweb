@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Hospital-Registration </title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body background= "https://laemadrid.com/wp-content/uploads/2015/11/refranes-de-oto%C3%B1o.jpg">
+<h1><center><h1>Registration</h1></center></h1>
+<script>
+
+        function checkdata()
+        {
+          var name=document.getElementById("name").value;
+          var email=document.getElementById("email").value;
+          var birthday=document.getElementById("birthday").value;
+          var gender=document.getElementById("gender").value;
+          var password=document.getElementById("password").value;
+
+          var passlen=password.length;
+          var num=/^[0-9]+$^/;
+          var alphanum=/^[0-9a-zA-Z]+$/;
+          var alpha=/^[a-zA-Z]+$/;
+          var eepr=/^[a-zA-Z0-9.]+@[a-zA-Z0-9.]+\.[a-zA-Z]{2,3}$/
+
+              if(eepr.test(email)==false||alpha.test(name)==false)
+              {
+                alert("Invalid data!! Enter again with correct credentials");
+              }
+              else
+              {
+                document.getElementById("reg").submit();
+              }
+         }
+</script>
+<form action="Regs.php" method="post" id="reg">
+<center><table>
+<p>
+
+  <tr>
+    <td><h3>Name:</h3></td>
+    <td><input type="text" name="name" id="name"></td>
+  </tr>
+  <tr>
+    <td><h3>Email Id:- </h3></td>
+    <td><input type="text" name="email" id="email"></td>
+  </tr>
+  <tr>
+    <td><h3>Date of Birth:</h3></td>
+    <td><input type="date" name="birthday" id="birthday"></td>
+  </tr>
+
+  <tr>
+      <td><h3>Sex:<h3></td>
+  </tr>
+  <tr>
+      <td><h3><input type="radio" name="gender" value="male" id="gender" checked> Male</h3></td>
+      <td><h3><input type="radio" name="gender" value="female" id="gender"> Female</h3></td>
+      <td><h3><input type="radio" name="gender" value="other" id="gender"> Other<h3><td>
+  </tr>
+  <tr>
+    <td><h3>New Password:<h3></td>
+    <td><input type="password" name="password" id="password"></td>
+  </tr>
+  <tr>
+    <td colspan="2"><center><input type="button" value="Submit" onclick="checkdata()"/></center></td>
+  </tr>
+  <tr>
+    <td><a href="http://192.168.64.2/Homepage.html">Back</a></td>
+  </tr>
+</p>
+</table>
+</form></center>
+
+</body>
+</html>
